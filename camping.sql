@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  jeu. 20 fév. 2020 à 10:21
+-- Généré le :  lun. 24 fév. 2020 à 14:32
 -- Version du serveur :  5.7.26
 -- Version de PHP :  7.2.18
 
@@ -65,7 +65,7 @@ CREATE TABLE IF NOT EXISTS `reservations` (
   `Nom` varchar(20) NOT NULL,
   `utilisateur` varchar(20) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `reservations`
@@ -75,7 +75,7 @@ INSERT INTO `reservations` (`id`, `date_debut`, `date_fin`, `type`, `Bornes`, `D
 (14, '2020-02-15', '2020-02-20', 1, 1, 1, 0, 1, 'Toto', 'adrien'),
 (13, '2020-03-01', '2020-03-05', 1, 1, 0, 0, 3, 'Gonzalez', 'adrien'),
 (12, '2020-02-09', '2020-02-15', 2, 1, 1, 0, 2, 'Adrien', 'adrien'),
-(11, '2020-02-02', '2020-02-09', 2, 1, 0, 0, 1, 'Gonzalez', 'Walken99');
+(19, '2020-02-29', '2020-03-05', 2, 1, 1, 0, 1, 'Gilles', 'admin');
 
 -- --------------------------------------------------------
 
