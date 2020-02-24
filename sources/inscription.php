@@ -10,14 +10,14 @@ if(!isset($_SESSION['login']))
 	<link href="camping.css" rel="stylesheet">
 	<title>Inscription</title>
 	<meta charset="UTF-8">
-</head> 
+</head>
 
 <body class="inscription">
 
 <header>
 	<ul>
 		<li><a href="../index.php">Accueil</a></li>
-	</ul>
+	</ul>			
 </header>
 
 
@@ -27,14 +27,14 @@ if(!isset($_SESSION['login']))
 
 if(isset($_POST['Valider']))
 {
-	$connexion= mysqli_connect("localhost", "root", "", "camping");
+	$connexion= mysqli_connect("localhost", "root", "", "camping"); 
 	$login=$_POST['field1'];
 	$req="SELECT  *from utilisateurs WHERE login='$login'";
     $query=mysqli_query($connexion, $req) or die(mysqli_error($connexion));
     $result=mysqli_num_rows($query);
 
 
-
+		
 	if((($_POST['field2']!=$_POST['field3'])||($result>0))||(strlen($_POST['field2'])< 5))
 	{
 		if(($_POST['field2']!=$_POST['field3'])&&($result>0))
@@ -56,7 +56,7 @@ if(isset($_POST['Valider']))
 			<?php
 		}
 		else if((strlen($_POST['field2'])< 5)&&($result>0))
-		{
+		{  
 			?>
 			<div class="erreur">
 			<div class="affichage">
@@ -72,10 +72,10 @@ if(isset($_POST['Valider']))
 			?>
 			</div>
 			</div>
-			<?php
-		}
+			<?php			
+		}	
 		else if($result>0)
-		{
+		{	  
 			?>
 			<div class="erreur">
 			<div class="affichage">
@@ -85,10 +85,10 @@ if(isset($_POST['Valider']))
 			</div>
 			</div>
 			<?php
-			mysqli_close($connexion);
+			mysqli_close($connexion);	
 		}
 		else if($_POST['field2']!=$_POST['field3'])
-		{
+		{  
 			?>
 			<div class="erreur">
 			<div class="affichage">
@@ -98,10 +98,10 @@ if(isset($_POST['Valider']))
 			?>
 			</div>
 			</div>
-			<?php
+			<?php			
 		}
 		else if(strlen($_POST['field2']< 5))
-		{
+		{  
 			?>
 			<div class="erreur">
 			<div class="affichage">
@@ -112,21 +112,21 @@ if(isset($_POST['Valider']))
 			?>
 			</div>
 			</div>
-			<?php
-		}
-	}
+			<?php			
+		}	
+	}	
 	else
-	{
+	{	
 
-			$hash = password_hash($_POST['field2'], PASSWORD_BCRYPT, ['cost' => 12]);
-			$connexion= mysqli_connect("localhost", "root", "", "camping");
+			$hash = password_hash($_POST['field2'], PASSWORD_BCRYPT, ['cost' => 12]);					
+			$connexion= mysqli_connect("localhost", "root", "", "camping"); 
 			$req2 = 'INSERT INTO `utilisateurs`(`login`,`password`)VALUES
-			("'.$_POST['field1'].'", "'.$hash.'");';
-			mysqli_query($connexion, $req2);
+			("'.$_POST['field1'].'", "'.$hash.'");';		
+			mysqli_query($connexion, $req2);		 
 			mysqli_close($connexion);
-			header('Location: connexion.php');
-
-
+			header('Location: connexion.php');	
+			
+			
 	}
 }
 // --------------------------------------------FIN PHP--------------------------------------------
@@ -154,9 +154,9 @@ if(isset($_POST['Valider']))
 		</fieldset>
 		</form>
 </div>
+				
 
-
-
+	
 </body>
 
 <?php
@@ -168,3 +168,4 @@ else
 ?>
 
 </html>
+
