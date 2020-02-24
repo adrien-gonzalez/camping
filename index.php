@@ -81,7 +81,17 @@ if(isset($_SESSION['login']))
 	<div class="about">	
 		<a href="#about"><h1>En savoir plus</h1></a>
 	</div>
+	<?php if(isset( $_SESSION['confirmreserv']))
+	{
+	?>
+	<div class="messagereserv"><?php echo $_SESSION['confirmreserv']; ?></div>
+	<?php
+	}
+	unset($_SESSION['confirmreserv']);
+	?>
 </div>
+
+
 
 
 
