@@ -191,7 +191,7 @@ if(isset($_POST['back']))
 if(!isset($_SESSION['emplacement']))
 {
 ?>
-<div id="messageemplacement">Veuillez choisir un emplacement</div>
+	<div id="messageemplacement">Veuillez choisir un emplacement</div>
 
 <?php
 }
@@ -405,7 +405,8 @@ else
 	unset($_SESSION['scales2']);
 	unset($_SESSION['scales3']);
 	
-	?><meta http-equiv="refresh" content="0;URL=profil.php"><?php
+	$_SESSION['confirmreserv']="Votre réservation à bien été prise en compte";
+	?><meta http-equiv="refresh" content="0;URL=../index.php"><?php
 	
 	
 }
